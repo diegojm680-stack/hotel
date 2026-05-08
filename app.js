@@ -80,3 +80,47 @@ menuBtn.addEventListener("click", () => {
     menuBtn.setAttribute("aria-label", "Abrir menú");
   }
 });
+const botonesCarrito = document.querySelectorAll(".agregar-carrito");
+const listaCarrito = document.getElementById("listaCarrito");
+const totalCarrito = document.getElementById("totalCarrito");
+const btnVaciarCarrito = document.getElementById("vaciarCarrito");
+
+let carrito = [];
+
+botonesCarrito.forEach((boton) => {
+  boton.addEventListener("click", () => {
+      const nombre = boton.dataset.nombre;
+          const precio = Number(boton.dataset.precio);
+
+              carrito.push({ nombre, precio });
+                  mostrarCarrito();
+                    });
+                    });
+
+                    function mostrarCarrito() {
+                      listaCarrito.innerHTML = "";
+                        let total = 0;
+
+                          carrito.forEach((producto, index) => {
+                              total += producto.precio;
+
+                                  const item = document.createElement("li");
+                                      item.innerHTML = `
+                                            ${producto.nombre} - $${producto.precio}
+                                                  <button type="button" onclick="eliminarDelCarrito(${index})">Eliminar</button>
+                                                      `;
+                                                          listaCarrito.appendChild(item);
+                                                            });
+
+                                                              totalCarrito.textContent = total;
+                                                              }
+
+                                                              function eliminarDelCarrito(index) {
+                                                                carrito.splice(index, 1);
+                                                                  mostrarCarrito();
+                                                                  }
+
+                                                                  btnVaciarCarrito.addEventListener("click", () => {
+                                                                    carrito = [];
+                                                                      mostrarCarrito();
+                                                                      });
