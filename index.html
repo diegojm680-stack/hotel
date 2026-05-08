@@ -82,8 +82,7 @@ espacio y una estancia agradable, adaptándose a lo que necesitas.
         <li>Acceso sencillo a mobiliario</li>
       </ul>
 
-      <p class="precio">$500</p>
-    </article>
+     </article>
 
     <article class="card" tabindex="0">
       <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427" alt="Habitación accesible mediana" style="width:100%; border-radius:10px; margin-bottom:10px;">
@@ -128,6 +127,46 @@ espacio y una estancia agradable, adaptándose a lo que necesitas.
       <p class="precio">$1,500</p>
     </article>
 
+  </div>
+</section>
+<section class="section fondo" id="carrito" tabindex="0">
+  <h2>Servicios para reservar</h2>
+  <p>Agrega a tu carrito los servicios que deseas incluir en tu estancia.</p>
+
+  <div class="cards">
+    <article class="card">
+      <h3>Habitación pequeña</h3>
+      <p>Ideal para una persona o estancia corta.</p>
+      <p class="precio">$500</p>
+      <button class="btn agregar-carrito" data-nombre="Habitación pequeña" data-precio="500">
+        Agregar
+      </button>
+    </article>
+
+    <article class="card">
+      <h3>Habitación mediana</h3>
+      <p>Mayor espacio y comodidad para parejas o familias pequeñas.</p>
+      <p class="precio">$1000</p>
+      <button class="btn agregar-carrito" data-nombre="Habitación mediana" data-precio="1000">
+        Agregar
+      </button>
+    </article>
+
+    <article class="card">
+      <h3>Habitación grande</h3>
+      <p>Espacio amplio para familias o grupos.</p>
+      <p class="precio">$1500</p>
+      <button class="btn agregar-carrito" data-nombre="Habitación grande" data-precio="1500">
+        Agregar
+      </button>
+    </article>
+  </div>
+
+  <div class="formulario carrito-box">
+    <h3>Tu carrito</h3>
+    <ul id="listaCarrito"></ul>
+    <p><strong>Total: $<span id="totalCarrito">0</span></strong></p>
+    <button id="vaciarCarrito" class="btn" type="button">Vaciar carrito</button>
   </div>
 </section>
 <section class="section fondo" id="accesibilidad-hotel" tabindex="0">
